@@ -10,7 +10,7 @@ for x in pathIn:
         path += x
         
 lastFileSize = 0
-for file in os.listdir(path):
+for file in reversed(os.listdir(path)):
     if os.path.getsize(f"{path}/{file}") == lastFileSize:
         os.remove(f"{path}/{file}")
         print(f"deleted {path}/{file}")
